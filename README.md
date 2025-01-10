@@ -24,9 +24,17 @@ A robust Node.js backend application for managing tasks, built with Express.js a
   - Welcome emails for new users
   - Task reminder notifications
 
-## 🚀 Live Demo
+## 🌐 API Base URL
 
-Access the live application at: [Task Manager App](https://thavee-task-manager-f4d1fb5590fd.herokuapp.com)
+The application is deployed on Heroku and can be accessed at:
+```
+https://thavee-task-manager-f4d1fb5590fd.herokuapp.com
+```
+
+For API calls, append the endpoint paths to this base URL. For example:
+- To register: `https://thavee-task-manager-f4d1fb5590fd.herokuapp.com/users`
+- To login: `https://thavee-task-manager-f4d1fb5590fd.herokuapp.com/users/login`
+- To create task: `https://thavee-task-manager-f4d1fb5590fd.herokuapp.com/tasks`
 
 ## 📋 Prerequisites
 
@@ -166,4 +174,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## 📮 Contact
 
-For questions or support, please [open an issue](https://github.com/thaveesha98/Task-Manager-App/issues) or contact the maintainer.
+For questions or support, please [open an issue](https://github.com/yourusername/task-manager/issues) or contact the maintainer.
