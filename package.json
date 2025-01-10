@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "env-cmd -f ./config/production.env node src/index.js",
     "dev": "env-cmd -f ./config/dev.env nodemon src/index.js"
   },
   "author": "",
