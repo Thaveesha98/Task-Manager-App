@@ -22,13 +22,13 @@ router.post('/users/login',async(req,res) =>{
     try{
         const user = await User.findByCredentials(req.body.email,req.body.password)
         const token = await user.generateAuthToken()
-        if(!user){
-            return res.status(401).send({"error": "Invalid email or password"})
-        }
         res.send({user,token})
     }
     catch(err){
-    res.status(500).send(err.message)
+        if(err.message === 'Invalid credentials'){
+            return res.status(401).send({"error": "Invalid email or password"})
+        }
+        res.status(500).send(err.message)
 }
 })
 router.post('/users/logout',auth,async(req,res) =>{
@@ -113,7 +113,7 @@ router.patch('/users/me',auth,async(req,res)=>{
     }
     try{
         updates.forEach((update)=>{
-            console.log(update)
+            // console.log(update)
             return req.user[update]=req.body[update]
         })
         await req.user.save()
